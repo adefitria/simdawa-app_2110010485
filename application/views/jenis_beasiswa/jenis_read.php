@@ -37,9 +37,9 @@
                             </thead>
                             <tbody>
                                 <?php
-                                if (isset($jenis) && !empty($jenis))
+                                if (isset($jenis_beasiswa) && !empty($jenis_beasiswa))
                                 $no = 1;
-                                foreach ($jenis as $a) {
+                                foreach ($jenis_beasiswa as $a) {
                                 ?>
                                 <tr>
                                     <td><?= $no++ ?></td>
