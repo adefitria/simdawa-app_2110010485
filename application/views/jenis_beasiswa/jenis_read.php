@@ -36,7 +36,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $no = 1;
+                                <?php
+                                if (isset($jenis) && !empty($jenis))
+                                $no = 1;
                                 foreach ($jenis as $a) {
                                 ?>
                                 <tr>
