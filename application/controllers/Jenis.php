@@ -45,6 +45,7 @@ class Jenis extends CI_Controller
     {
         // Validasi input dari form
         $this->form_validation->set_rules('nama_jenis', 'Nama Jenis', 'required');
+        $this->form_validation->set_rules('keterangan', 'Keterangan', 'required');
 
         if ($this->form_validation->run() == FALSE) {
             // Jika validasi gagal, kembali ke form tambah
@@ -52,7 +53,8 @@ class Jenis extends CI_Controller
         } else {
             // Ambil data dari form
             $data = array(
-                'nama_jenis' => $this->input->post('nama_jenis')
+                'nama_jenis' => $this->input->post('nama_jenis'),
+                'keterangan' => $this->input->post('keterangan')
             );
 
             // Menyimpan data ke database menggunakan model
