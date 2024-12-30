@@ -75,6 +75,7 @@ class Jenis extends CI_Controller
     {
         // Mengambil data jenis beasiswa berdasarkan ID
         $data['jenis_beasiswa'] = $this->M_jenis->get_jenis_beasiswa_by_id($jenis_id);
+        $this->form_validation->set_rules('keterangan', 'Keterangan', 'required');
 
         if (!$data['jenis_beasiswa']) {
             // Jika data tidak ditemukan, redirect ke halaman utama dengan pesan error
@@ -96,6 +97,7 @@ class Jenis extends CI_Controller
     {
         // Validasi input dari form
         $this->form_validation->set_rules('nama_jenis', 'Nama Jenis', 'required');
+        $this->form_validation->set_rules('keterangan', 'Keterangan', 'required');
 
         if ($this->form_validation->run() == FALSE) {
             // Jika validasi gagal, kembali ke form edit
@@ -103,7 +105,8 @@ class Jenis extends CI_Controller
         } else {
             // Ambil data dari form
             $data = array(
-                'nama_jenis' => $this->input->post('nama_jenis')
+                'nama_jenis' => $this->input->post('nama_jenis'),
+                'keterangan' => $this->input->post('keterangan')
             );
 
             // Memperbarui data menggunakan model
