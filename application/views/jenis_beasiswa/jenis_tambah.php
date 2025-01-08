@@ -29,7 +29,7 @@ jenis_create.php
                         Tambah Data Jenis Beasiswa
                     </div>
                     <div class="card-body">
-                        <form action="<?= site_url('jenis/proses_tambah');?>" method="post">
+                        <form action="" method="post">
                             <div class="form-group row">
                                 <label for="nama_jenis" class="col-md-2">Nama Jenis Beasiswa</label>
                                 <div class="col-md-10">

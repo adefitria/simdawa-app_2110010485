@@ -36,20 +36,17 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php
-                                if (isset($jenis_beasiswa) && !empty($jenis_beasiswa))
-                                $no = 1;
-                                foreach ($jenis_beasiswa as $a) {
+                                <?php $no = 1;
+                                foreach ($jenis as $a) {
                                 ?>
                                 <tr>
                                     <td><?= $no++ ?></td>
                                     <td><?= $a->nama_jenis ?></td>
                                     <td><?= $a->keterangan ?></td>
                                     <td>
-                                        <a href="<?= base_url('jenis/edit/' . $a->id) ?>" class="btn btn-sm btn-info"><i
+                                        <a href="<?= base_url('jenis/ubah/' . $a->id) ?>" class="btn btn-sm btn-info"><i
                                                 class="fas fa-edit"></i> Ubah</a>
-                                        <a href="<?= base_url('jenis/delete/' . $a->id) ?>"
-                                            class="btn btn-sm btn-danger"
+                                        <a href="<?= base_url('jenis/hapus/' . $a->id) ?>" class="btn btn-sm btn-danger"
                                             onclick="return confirm('Ingin hapus data ini?')"><i
                                                 class="fas fa-trash"></i> Hapus</a>
                                     </td>

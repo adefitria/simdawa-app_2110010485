@@ -1,7 +1,3 @@
-<!--
-jenis_update.php
--->
-
 <div class="dashboard-wrapper">
     <div class="container-fluid dashboard-content">
         <div class="row">
@@ -22,16 +18,6 @@ jenis_update.php
                 </div>
             </div>
         </div>
-        <!-- Menampilkan Flash Data (Notifikasi) -->
-        <?php if ($this->session->flashdata('success')): ?>
-        <div class="alert alert-success" role="alert">
-            <?php echo $this->session->flashdata('success'); ?>
-        </div>
-        <?php elseif ($this->session->flashdata('error')): ?>
-        <div class="alert alert-danger" role="alert">
-            <?php echo $this->session->flashdata('error'); ?>
-        </div>
-        <?php endif; ?>
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="card">
@@ -39,20 +25,20 @@ jenis_update.php
                         Perbaharui Data Jenis Beasiswa
                     </div>
                     <div class="card-body">
-                        <form action="<?= site_url('jenis/proses_edit/' . $jenis_beasiswa->id); ?>" method="post">
+                        <form action="" method="post">
                             <div class="form-group row">
-                                <input type="hidden" name="id" value="<?= $jenis_beasiswa->id ?>">
+                                <input type="hidden" name="id" value="<?= $jenis->id ?>">
                                 <label for="nama_jenis" class="col-md-2">Nama Jenis Beasiswa</label>
                                 <div class="col-md-10">
                                     <input type="text" name="nama_jenis" required placeholder="Nama Jenis Beasiswa"
-                                        value="<?= $jenis_beasiswa->nama_jenis ?>" class="form-control">
+                                        value="<?= $jenis->nama_jenis ?>" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="keterangan" class="col-md-2">Keterangan</label>
                                 <div class="col-md-10">
                                     <input type="text" name="keterangan" required placeholder="Keterangan"
-                                        value="<?= $jenis_beasiswa->keterangan ?>" class="form-control">
+                                        value="<?= $jenis->keterangan ?>" class="form-control">
                                 </div>
                             </div>
                             <a href="<?= base_url('jenis') ?>" class="btn btn-sm btn-danger float-right">Batal</a>
