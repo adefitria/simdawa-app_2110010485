@@ -3,6 +3,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Beasiswa extends CI_Controller
 {
+	public function __construct()
+    {
+        parent::__construct();
+        // Memuat database
+        $this->load->database();
+    }
 
     public function index()
     {
