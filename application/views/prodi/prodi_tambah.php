@@ -6,6 +6,9 @@ prodi_create.php
     <div class="container-fluid dashboard-content">
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <?php
+                $this->load->view('template/notifikasi')
+                ?>
                 <div class="page-header">
                     <h2 class="pageheader-title">Tambah Data Prodi </h2>
                     <div class="page-breadcrumb">

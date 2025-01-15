@@ -17,6 +17,14 @@ class ProdiModel extends CI_Model {
         //nama_prodi sebelah kiri, sesuaikan dengan nama kolom di tabel
         //nama_prodi sebelah kanan, sesuaikan dengan name di form yaitu (prodi_create.php baris 29)
         $this->db->insert($this->tabel, $data);
+
+        if ($this->db->affected_rows() > 0) {
+        $this->session->set_flashdata('pesan', "Data Prodi berhasil ditambahkan!");
+        $this->session->set_flashdata('status', true);
+        } else {
+        $this->session->set_flashdata('pesan', "Data Prodi gagal ditambahkan!");
+        $this->session->set_flashdata('status', false);
+        }
         
     }
 
@@ -30,10 +38,26 @@ class ProdiModel extends CI_Model {
         ];
         $this->db->where('id', $this->input->post('id'));
         $this->db->update($this->tabel, $data);
+
+        if ($this->db->affected_rows() > 0) {
+        $this->session->set_flashdata('pesan', "Data Prodi berhasil diperbaharui!");
+        $this->session->set_flashdata('status', true);
+        } else {
+        $this->session->set_flashdata('pesan', "Data Prodi gagal diperbaharui!");
+        $this->session->set_flashdata('status', false);
+        }
     }
     
     public function delete_prodi($id){
         $this->db->where('id', $id);
         $this->db->delete($this->$tabel);
+
+        if ($this->db->affected_rows() > 0) {
+        $this->session->set_flashdata('pesan', "Data Prodi berhasil dihapus!");
+        $this->session->set_flashdata('status', true);
+        } else {
+        $this->session->set_flashdata('pesan', "Data Prodi gagal dihapus!");
+        $this->session->set_flashdata('status', false);
+        }
     }
 }

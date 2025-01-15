@@ -9,7 +9,6 @@
         $this->load->model('BeasiswaModel');
         $this->load->model('JenisModel');
         //$this->load->model(array('BeasiswaModel', 'JenisModel'));
-        $this->load->library('Pdf');
     }
 
     public function index()

@@ -18,6 +18,15 @@ class JenisModel extends CI_Model {
         //nama_jenis sebelah kiri, sesuaikan dengan nama kolom di tabel
         //nama_jenis sebelah kanan, sesuaikan dengan name di form yaitu (jenis_create.php baris 29)
         $this->db->insert($this->tabel, $data);
+
+        if ($this->db->affected_rows() > 0) {
+        $this->session->set_flashdata('pesan', "Data Jenis berhasil ditambahkan!");
+        $this->session->set_flashdata('status', true);
+        } else {
+        $this->session->set_flashdata('pesan', "Data Jenis gagal ditambahkan!");
+        $this->session->set_flashdata('status', false);
+        }
+
         
     }
 
@@ -32,10 +41,26 @@ class JenisModel extends CI_Model {
         ];
         $this->db->where('id', $this->input->post('id'));
         $this->db->update($this->tabel, $data);
+
+        if ($this->db->affected_rows() > 0) {
+        $this->session->set_flashdata('pesan', "Data Jenis berhasil diperbaharui!");
+        $this->session->set_flashdata('status', true);
+        } else {
+        $this->session->set_flashdata('pesan', "Data Jenis gagal diperbaharui!");
+        $this->session->set_flashdata('status', false);
+        }
     }
     
     public function delete_jenis($id){
         $this->db->where('id', $id);
         $this->db->delete($this->$tabel);
+
+        if ($this->db->affected_rows() > 0) {
+        $this->session->set_flashdata('pesan', "Data Jenis berhasil dihapus!");
+        $this->session->set_flashdata('status', true);
+        } else {
+        $this->session->set_flashdata('pesan', "Data Jenis gagal dihapus!");
+        $this->session->set_flashdata('status', false);
+        }
     }
 }

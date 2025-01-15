@@ -52,4 +52,9 @@ class Persyaratan extends CI_Controller {
             redirect('persyaratan');
         }
     }
+    public function cetak()
+    {
+        $data['persyaratan'] = $this->PersyaratanModel->get_persyaratan();
+        $this->load->view('persyaratan/persyaratan_print', $data);
+    }
 }
